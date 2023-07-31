@@ -10,6 +10,10 @@
   justify-content: space-evenly;
 }
 
+img {
+  width: 150px;
+}
+
 #form-sinistros, #login-form {
   display: flex;
   flex-direction: column;
@@ -48,4 +52,24 @@ button {
 
 #select-form, #date-form {
   height: 25px;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+table {
+  background-color: rgb(144, 0, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+p {
+  color: rgb(144, 0, 255);
 }
