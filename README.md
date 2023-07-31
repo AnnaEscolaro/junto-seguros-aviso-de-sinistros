@@ -1,0 +1,1 @@
+# junto-seguros-aviso-de-sinistros
