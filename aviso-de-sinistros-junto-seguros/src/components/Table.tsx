@@ -1,5 +1,29 @@
-function Table() {
+import { useSelector } from 'react-redux';
+import { InformationType } from '../types';
+import { useDispatch } from 'react-redux';
+import { deleteFormInformation } from '../redux/actions';
 
+function Table() {
+  const historyInformation = useSelector((state) => state);
+
+  const dispatch = useDispatch();
+
+  const handleClickDelete = () => {
+    // historyInformation.filter((item) => item.location.address !== action.location.address)
+    dispatch(deleteFormInformation({
+      date,
+      type,
+      location: {
+        address,
+        number,
+        district,
+        city,
+        stateLocal: state,
+        country
+      }
+    }))
+  };
+  
   return (
     <table>
       <thead>
@@ -9,18 +33,19 @@ function Table() {
           <th>Local do Sinistro</th>
         </tr>
       </thead>
-      {/* <tbody>
-        {XPTO.map((expense: any) => (
-          <tr key={XPTO.id }>
-            <td>{ XPTO.date }</td>
-            <td>{ XPTO.type }</td>
+      <tbody>
+        {historyInformation.map((info: InformationType) => (
+          <tr key={info.location.address }>
+            <td>{ info.date }</td>
+            <td>{ info.type }</td>
+            <td>{ `${info.location.address}, ${info.location.number}, ${info.location.district}, ${info.location.city}, ${info.location.stateLocal}, ${info.location.country}` }</td>
             <td>
               <button>Editar</button>
-              <button>Excluir</button>
+              <button onClick={ handleClickDelete }>Excluir</button>
             </td>
           </tr>
         ))}
-      </tbody> */}
+      </tbody>
     </table>
 
   );

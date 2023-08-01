@@ -1,4 +1,4 @@
-import { Route, Routes } from '../../../../node_modules/react-router-dom/dist/index';
+import { Route, Routes } from 'react-router-dom';
 import './App.css'
 import Login from './pages/Login';
 import Form from './pages/Form';
