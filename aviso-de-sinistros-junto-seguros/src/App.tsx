@@ -9,7 +9,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={ <Dashboard /> }>
-        <Route path='/login' element= { <Login /> } />
+        <Route path='/' element= { <Login /> } />
         <Route path='/form' element= { <Form /> } />
         <Route path='/*' element= { <NotFound /> } />
       </Route>
