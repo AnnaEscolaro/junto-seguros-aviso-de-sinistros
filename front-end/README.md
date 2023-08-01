@@ -11,8 +11,8 @@ Qual base de dados você utilizou?
 Lowdb
 
 Passo a passo para rodar o projeto.
-Abrir dois terminais:
-Dentro da pasta /junto-seguros-aviso-de-sinistros/junto-seguros-aviso-de-sinistros/aviso-de-sinistros-junto-seguros, iniciar o comanto npm run dev
+Na pasta /junto-seguros-aviso-de-sinistros rodar comando npm install
+Dentro da pasta /junto-seguros-aviso-de-sinistros/front-end, iniciar o comanto npm run dev
 npm run dev para iniciar o Vite
 Dentro da pasta /junto-seguros-aviso-de-sinistros/back-end, iniciar o comanto npm run dev para iniciar a aplicação
 

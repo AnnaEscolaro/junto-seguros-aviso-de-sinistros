@@ -1,4 +1,4 @@
-import { Outlet } from "../../../../../node_modules/react-router-dom/dist/index";
+import { Outlet } from "react-router-dom";
 import Header from "./Header";
 
 function Dashboard() {
