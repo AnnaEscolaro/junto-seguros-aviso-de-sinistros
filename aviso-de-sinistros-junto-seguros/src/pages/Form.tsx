@@ -18,7 +18,6 @@ function Form() {
   const activateButton = () => {
     return (
       date.length < 1
-      || type.length < 1
       || address.length < 1
       || number.length < 1
       || district.length < 1

@@ -1,27 +1,26 @@
 import { useSelector } from 'react-redux';
 import { InformationType } from '../types';
-import { useDispatch } from 'react-redux';
-import { deleteFormInformation } from '../redux/actions';
+// import { useDispatch } from 'react-redux';
+// import { deleteFormInformation } from '../redux/actions';
 
 function Table() {
   const historyInformation = useSelector((state) => state);
 
-  const dispatch = useDispatch();
+//   const dispatch = useDispatch();
 
   const handleClickDelete = () => {
-    // historyInformation.filter((item) => item.location.address !== action.location.address)
-    dispatch(deleteFormInformation({
-      date,
-      type,
-      location: {
-        address,
-        number,
-        district,
-        city,
-        stateLocal: state,
-        country
-      }
-    }))
+    // dispatch(deleteFormInformation({
+    //   date,
+    //   type,
+    //   location: {
+    //     address,
+    //     number,
+    //     district,
+    //     city,
+    //     stateLocal: state,
+    //     country
+    //   }
+    // }))
   };
   
   return (
