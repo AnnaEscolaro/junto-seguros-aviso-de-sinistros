@@ -44,7 +44,6 @@ function Login() {
     event.preventDefault();
     navigate('/form');
   };
-
   
   return (
     <form id="login-form" onSubmit={ handleSubmit }>
