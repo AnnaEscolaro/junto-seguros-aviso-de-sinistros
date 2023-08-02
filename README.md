@@ -17,5 +17,5 @@ Low-DB
 Passo a passo para rodar o projeto.
 1 - Clonar o repositório: 'git clone git@github.com:AnnaEscolaro/junto-seguros-aviso-de-sinistros.git';
 2 - Entrar na pasta /junto-seguros-aviso-de-sinistros: 'cd junto-seguros-aviso-de-sinistros';
-3 - Rodar o comando npm setup; e
+3 - Rodar o comando npm run setup; e
 4 - Rodar o comando npm start.
