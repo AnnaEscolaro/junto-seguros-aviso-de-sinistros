@@ -1,58 +1,23 @@
-import { InformationType } from '../../types';
+import { InformationType } from "../../types";
 
-export const ADD_INFORMATION = 'ADD_INFORMATION';
-export const DELETE_INFORMATION = 'DELETE_INFORMATION';
+export const REQUEST_STARTED = 'REQUEST_STARTED';
+export const REQUEST_SUCCESSFUL = 'REQUEST_SUCCESSFUL';
+export const REQUEST_FAILED = 'REQUEST_FAILED';
 
-export const addFormInformation = ({
-  date,
-  type,
-  location: {
-    address,
-    number,
-    district,
-    city,
-    stateLocal,
-    country
-  }
-}: InformationType) => ({
-  type: ADD_INFORMATION,
-  payload: {
-      date,
-      type,
-      location: {
-        address,
-        number,
-        district,
-        city,
-        stateLocal,
-        country
-      }
-    }
-});
+export function requestStarted() {
+  return { type: REQUEST_STARTED };
+}
 
-export const deleteFormInformation = ({
-  date,
-  type,
-  location: {
-    address,
-    number,
-    district,
-    city,
-    stateLocal,
-    country
-  }
-}: InformationType) => ({
-  type: DELETE_INFORMATION,
-  payload: {
-      date,
-      type,
-      location: {
-        address,
-        number,
-        district,
-        city,
-        stateLocal,
-        country
-      }
-    }
-});
+export function requestSuccessful(information: InformationType | InformationType[]) {
+  return {
+    type: REQUEST_SUCCESSFUL,
+    payload: information,
+  };
+}
+
+export function requestFailed(errorMessage: string) {
+  return {
+    type: REQUEST_FAILED,
+    payload: errorMessage,
+  };
+}

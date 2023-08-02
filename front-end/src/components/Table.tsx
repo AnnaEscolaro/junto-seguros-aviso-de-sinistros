@@ -1,12 +1,17 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { InformationType } from '../types';
-// import { useDispatch } from 'react-redux';
-// import { deleteFormInformation } from '../redux/actions';
+import { DispatchType } from '../types';
+import { getClaims } from '../redux/actions/list-claims';
+import { useEffect } from 'react';
 
 function Table() {
   const historyInformation = useSelector((state) => state);
 
-//   const dispatch = useDispatch();
+  const dispatch: DispatchType = useDispatch();
+
+  useEffect(() => {
+    dispatch(getClaims());
+  }, []);
 
   const handleClickDelete = () => {
     // dispatch(deleteFormInformation({

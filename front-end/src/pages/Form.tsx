@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addFormInformation } from '../redux/actions';
+import { postDataToApi } from '../redux/actions/add-claim';
 import Table from "../components/Table";
+import { DispatchType } from '../types';
 
 function Form() {
   const [date, setDate] = useState('');
@@ -13,11 +14,12 @@ function Form() {
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
 
-  const dispatch = useDispatch();
+  const dispatch: DispatchType = useDispatch();
 
   const activateButton = () => {
     return (
       date.length < 1
+      || type === ''
       || address.length < 1
       || number.length < 1
       || district.length < 1
@@ -29,7 +31,7 @@ function Form() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(addFormInformation({
+    dispatch(postDataToApi({
       date,
       type,
       location: {
@@ -54,6 +56,7 @@ function Form() {
         <label>
           Tipo
           <select id="select-form" onChange={ e => setType(e.target.value) }>
+            <option>Selecione</option>
             <option value="roubo-ou-furto">Roubo ou Furto</option>
             <option value="colisao">Colisão</option>
             <option value="causas-naturais">Causas Naturais</option>

@@ -1,8 +1,8 @@
 # junto-seguros-aviso-de-sinistros
 
 Que ferramentas você utilizou para realizar o desafio?
-Frontend: React + Typescript usando o Vite
-Backend: Express + Lowdb
+Frontend: React, Redux, Thunk, Typescript, Vite
+Backend: Express, Lowdb
 
 Que linguagem você usou no backend?
 Javascript
