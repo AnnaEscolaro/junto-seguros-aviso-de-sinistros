@@ -1,14 +1,30 @@
 import express from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import db from './db/setup.js';
+import { body, validationResult } from 'express-validator';
+
 const app = express();
 
-// middleware that formats req.body to JSON
+app.use(cors());
+
 app.use(bodyParser.json());
 
 const port = 3030;
 
-app.post('/sinistro', async (req, res) => {
+app.post('/sinistro',
+body('date')
+  .notEmpty()
+  .isDate(),
+body('type')
+  .notEmpty(),
+body('location')
+  .notEmpty(),
+async (req, res) => {
+  const result = validationResult(req);
+  if (result.errors.length > 0) {
+    return res.send({ errors: result.array() });
+  }
   const claim = req.body;
   claim.id = Math.floor(Date.now() / 1000);
   db.data.claims.push(claim);
@@ -24,7 +40,6 @@ app.put('/sinistro/:id', async (req, res) => {
     return res.sendStatus(404);
   }
   const { body } = req;
-  //validar body 
   delete body.id;
   db.data.claims[selectedClaimIndex] = { ...db.data.claims[selectedClaimIndex], ...body };
   await db.write();
@@ -52,8 +67,6 @@ app.get('/sinistro', async (req, res) => {
 });
 
 app.listen(port, async () => {
-  // Read data from JSON file, this will set db.data content
-  // If JSON file doesn't exist, defaultData is used instead
   await db.read();
   console.log(`App listening on port ${port}`);
 });

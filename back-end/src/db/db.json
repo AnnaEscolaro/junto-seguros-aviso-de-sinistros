@@ -2,54 +2,108 @@
   "users": [],
   "claims": [
     {
-      "date": "2023-01-01",
-      "payload": "1",
-      "id": 1690924981
+      "date": "2023-08-02",
+      "type": "causas naturais",
+      "location": {
+        "address": "Rua 1",
+        "number": "23",
+        "district": "Centro",
+        "city": "Londrina",
+        "stateLocal": "Paraná",
+        "country": "Brasil"
+      },
+      "id": 1690940259
     },
     {
-      "date": "2023-01-01",
-      "payload": "12",
-      "id": 1690925493
+      "date": "2023-08-02",
+      "type": "roubo-ou-furto",
+      "location": {
+        "address": "Rua 2",
+        "number": "2",
+        "district": "Centro",
+        "city": "Ponta Grossa",
+        "stateLocal": "Paraná",
+        "country": "Brasil"
+      },
+      "id": 1690940512
     },
     {
-      "date": "2023-01-01",
-      "payload": "15",
-      "id": 1690925500
+      "date": "2023-08-02",
+      "type": "colisao",
+      "location": {
+        "address": "Rua 3",
+        "number": "59",
+        "district": "Centro",
+        "city": "Belo Horizonte",
+        "stateLocal": "Minas Gerais",
+        "country": "Brasil"
+      },
+      "id": 1690940892
     },
     {
-      "date": "2023-01-01",
-      "payload": "15",
-      "id": 1690930852
+      "date": "2023-08-02",
+      "type": "roubo-ou-furto",
+      "location": {
+        "address": "Rua 4",
+        "number": "32",
+        "district": "Água Verde",
+        "city": "Curitiba",
+        "stateLocal": "Paraná",
+        "country": "Brasil"
+      },
+      "id": 1690941131
     },
     {
-      "date": "2023-01-01",
-      "payload": "15",
-      "id": 1690930882
+      "date": "2023-08-02",
+      "type": "colisao",
+      "location": {
+        "address": "Rua 5",
+        "number": "312",
+        "district": "Centro",
+        "city": "Colombo",
+        "stateLocal": "Paraná",
+        "country": "Brasil"
+      },
+      "id": 1690941132
     },
     {
-      "date": "2023-01-01",
-      "payload": "15",
-      "id": 1690930887
+      "date": "2023-07-31",
+      "type": "roubo-ou-furto",
+      "location": {
+        "address": "Rua 6",
+        "number": "35",
+        "district": "Centro",
+        "city": "Curitiba",
+        "stateLocal": "Paraná",
+        "country": "Brasil"
+      },
+      "id": 1690943066
     },
     {
-      "date": "2023-01-01",
-      "payload": "15",
-      "id": 1690930949
+      "date": "2023-07-31",
+      "type": "colisao",
+      "location": {
+        "address": "Rua 7",
+        "number": "35",
+        "district": "Centro",
+        "city": "Curitiba",
+        "stateLocal": "Paraná",
+        "country": "Brasil"
+      },
+      "id": 1691003323
     },
     {
-      "date": "2023-01-01",
-      "payload": "15",
-      "id": 1690932237
-    },
-    {
-      "date": "2023-01-01",
-      "payload": "15",
-      "id": 1690932249
-    },
-    {
-      "date": "2023-01-01",
-      "payload": "15",
-      "id": 1690932256
+      "date": "2023-07-30",
+      "type": "roubo-ou-furto",
+      "location": {
+        "address": "Rua 8",
+        "number": "50",
+        "district": "Centro",
+        "city": "Curitiba",
+        "stateLocal": "Paraná",
+        "country": "Brasil"
+      },
+      "id": 1691007315
     }
   ]
 }
