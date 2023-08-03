@@ -19,3 +19,6 @@ Passo a passo para rodar o projeto.
 2 - Entrar na pasta /junto-seguros-aviso-de-sinistros: 'cd junto-seguros-aviso-de-sinistros';
 3 - Rodar o comando npm run setup; e
 4 - Rodar o comando npm start.
+
+
+OBSERVAÇÃO: As opções de criar, editar, deletar e listar informações foram criadas no backend. Porém, no frontend, consegui finalizar no prazo apenas criar e listar informações, assim, os botões editar e deletar ainda não estão funcionais.
