@@ -3,6 +3,8 @@ import { InformationType } from '../types';
 import { DispatchType } from '../types';
 import { getClaims } from '../redux/actions/list-claims';
 import { useEffect } from 'react';
+import { getClaimToDelete } from '../redux/actions/delete-claim';
+import { claimToEdit } from '../redux/actions/edit-claim';
 
 function Table() {
   const historyInformation = useSelector((state) => state);
@@ -13,21 +15,6 @@ function Table() {
     dispatch(getClaims());
   }, []);
 
-  const handleClickDelete = () => {
-    // dispatch(deleteFormInformation({
-    //   date,
-    //   type,
-    //   location: {
-    //     address,
-    //     number,
-    //     district,
-    //     city,
-    //     stateLocal: state,
-    //     country
-    //   }
-    // }))
-  };
-  
   return (
     <table>
       <thead>
@@ -39,13 +26,45 @@ function Table() {
       </thead>
       <tbody>
         {historyInformation.map((info: InformationType) => (
-          <tr key={info.location.address }>
-            <td>{ info.date }</td>
-            <td>{ info.type }</td>
-            <td>{ `${info.location.address}, ${info.location.number}, ${info.location.district}, ${info.location.city}, ${info.location.stateLocal}, ${info.location.country}` }</td>
+          <tr key={info.id }>
             <td>
-              <button>Editar</button>
-              <button onClick={ handleClickDelete }>Excluir</button>
+              <input
+                type="date"
+                value={ info.date }
+                placeholder='Digite a data'
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                value={ info.type }
+                placeholder='Digite o tipo'
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                value={ `${info.location.address}, ${info.location.number}, ${info.location.district}, ${info.location.city}, ${info.location.stateLocal}, ${info.location.country}` }
+                placeholder='Digite o endereço'
+              />            
+            </td>
+            <td>
+              <button onClick={(e: React.MouseEvent<HTMLElement>) => {
+                e.preventDefault();
+                dispatch(claimToEdit(info.id))
+                window.location.reload()
+                }}
+              >
+                Salvar edição
+              </button>
+              <button onClick={(e: React.MouseEvent<HTMLElement>) => {
+                e.preventDefault();
+                dispatch(getClaimToDelete(info.id))
+                window.location.reload();
+                }}
+              >
+                Excluir
+              </button>
             </td>
           </tr>
         ))}

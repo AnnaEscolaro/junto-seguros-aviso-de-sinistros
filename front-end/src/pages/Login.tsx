@@ -7,6 +7,11 @@ function Login() {
 
   const navigate = useNavigate();
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate('/form');
+  };
+
   const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     setEmail(event.target.value);
@@ -38,11 +43,6 @@ function Login() {
       validateEmail()
       || validatePassword()
     );
-  };
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    navigate('/form');
   };
   
   return (

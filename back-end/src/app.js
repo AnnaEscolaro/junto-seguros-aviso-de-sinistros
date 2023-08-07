@@ -10,12 +10,9 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-const port = 3030;
-
 app.post('/sinistro',
 body('date')
-  .notEmpty()
-  .isDate(),
+  .notEmpty(),
 body('type')
   .notEmpty(),
 body('location')
@@ -23,13 +20,13 @@ body('location')
 async (req, res) => {
   const result = validationResult(req);
   if (result.errors.length > 0) {
-    return res.send({ errors: result.array() });
+    return res.status(500).send({ errors: result.array() });
   }
   const claim = req.body;
   claim.id = Math.floor(Date.now() / 1000);
   db.data.claims.push(claim);
   await db.write();
-  res.send(claim);
+  res.status(200).send(claim);
 });
 
 app.put('/sinistro/:id', async (req, res) => {
@@ -54,7 +51,6 @@ app.delete('/sinistro/:id', async (req, res) => {
   if (selectedToDeleteIndex === -1) {
     return res.sendStatus(404);
   }
-  console.log(claims[selectedToDeleteIndex]);
   claims.splice(selectedToDeleteIndex, 1);
   await db.write();
   res.sendStatus(200);
@@ -66,7 +62,4 @@ app.get('/sinistro', async (req, res) => {
   res.send(claims);
 });
 
-app.listen(port, async () => {
-  await db.read();
-  console.log(`App listening on port ${port}`);
-});
+export { app };

@@ -5,10 +5,12 @@ import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const file = join(__dirname, 'db.json');
-console.log(file);
+let dbName = 'db.json';
+if (process.env.NODE_ENV === 'test') {
+  dbName = 'db_test.json';
+}
+const file =  join(__dirname, dbName);
 
-// Configure lowdb to write data to JSON file
 const adapter = new JSONFile(file);
 const defaultData = { users: [], claims: [] };
 const db = new Low(adapter, defaultData);

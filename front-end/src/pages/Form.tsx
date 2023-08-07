@@ -16,19 +16,6 @@ function Form() {
 
   const dispatch: DispatchType = useDispatch();
 
-  const activateButton = () => {
-    return (
-      date.length < 1
-      || type === ''
-      || address.length < 1
-      || number.length < 1
-      || district.length < 1
-      || city.length < 1
-      || state.length < 1
-      || country.length < 1
-    );
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(postDataToApi({
@@ -43,6 +30,19 @@ function Form() {
         country
       }
     }));
+  };
+
+  const activateButton = () => {
+    return (
+      date.length < 1
+      || type === ''
+      || address.length < 1
+      || number.length < 1
+      || district.length < 1
+      || city.length < 1
+      || state.length < 1
+      || country.length < 1
+    );
   };
 
   return (
