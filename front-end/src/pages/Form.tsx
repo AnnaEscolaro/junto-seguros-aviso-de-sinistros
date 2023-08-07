@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { postDataToApi } from '../redux/actions/add-claim';
-import Table from "../components/Table";
+import { NavLink } from "react-router-dom";
 import { DispatchType } from '../types';
 
 function Form() {
@@ -13,6 +13,7 @@ function Form() {
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
+  const [description, setDescription] = useState('');
 
   const dispatch: DispatchType = useDispatch();
 
@@ -70,10 +71,11 @@ function Form() {
           <input type="text" placeholder="Cidade" className="input-location" onChange={ e => setCity(e.target.value) } />
           <input type="text" placeholder="Estado" className="input-location" onChange={ e => setState(e.target.value) } />
           <input type="text" placeholder="País" className="input-location" onChange={ e => setCountry(e.target.value) } />
+          <input type="text" placeholder="Descreva o sinistro" className="input-description" onChange={ e => setDescription(e.target.value)} />
         </label>
         <button disabled={ activateButton() } type="submit">Enviar</button>
       </form>
-      <Table />
+      <NavLink id="link-listar" to="/list">Listar Sinistros Anteriores</NavLink>
     </>
   )
 }
