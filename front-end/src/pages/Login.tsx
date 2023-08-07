@@ -49,7 +49,7 @@ function Login() {
     <form id="login-form" onSubmit={ handleSubmit }>
       <input type="email" placeholder="Digite seu e-mail" onChange={ handleChangeEmail } />
       <input type="password" placeholder="Digite sua senha" onChange= { handleChangePassword } />
-      <p>Sua senha precisa ter 6 ou mais caracteres e, ao menos, um caractere especial, uma letra e um número</p>
+      <h3>Sua senha precisa ter 6 ou mais caracteres e, ao menos, um caractere especial, uma letra e um número</h3>
       <button disabled={ activateButton() } type="submit">Entrar</button>  
     </form>
   )
